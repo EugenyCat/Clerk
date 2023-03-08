@@ -1,19 +1,26 @@
-from Shorts_py.clerk.commands.Command import Command
+from commands.Command import Command
 
 
 class Console:
 
     def __init__(self):
+        com = Command()
         self.__commands = [
-            Command().p,
-            Command().s
+            com.p,
+            com.s,
+            com.l,
+            com.ads,
+            com.ds,
+            com.ad,
+            com.d,
+            com.m
         ]
 
 
     def communicate(self):
 
         while True:
-            print('Введите команду')
+            print('Input command')
             command = input()
             if command == 'exit':
                 break
@@ -22,11 +29,4 @@ class Console:
                     item()
                     break
             else:
-                print('Несуществующая команда')
-
-
-
-
-
-
-Console().communicate()
+                print('Unknown command')
